@@ -12,7 +12,7 @@ public class githubUserActivityApp {
             return;
         }
 
-        String URL = "https://api.github.com/users/"+ args[0] + "/events";
+        String URL = "https://api.github.com/users/" + args[0] + "/events";
 
         HttpClient client = HttpClient.newHttpClient();
 
@@ -21,7 +21,7 @@ public class githubUserActivityApp {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200){
-                System.out.println(response);
+                System.out.println(response.body());
             } else {
                 System.out.println("Error:" + response.statusCode());
             }
