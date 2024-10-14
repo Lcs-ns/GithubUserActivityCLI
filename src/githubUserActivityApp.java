@@ -21,7 +21,15 @@ public class githubUserActivityApp {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200){
-                System.out.println(response.body());
+                String responseBody = response.body();
+                int start = 0;
+                while ((start = responseBody.indexOf("\"type\":", start)) != -1) {
+                    int colon = responseBody.indexOf(":", start);
+                    int comma = responseBody.indexOf(",", colon);
+                    String eventType = responseBody.substring(colon + 2, comma - 1);
+                    System.out.println(eventType);
+                    start = comma;
+                }
             } else {
                 System.out.println("Error:" + response.statusCode());
             }
