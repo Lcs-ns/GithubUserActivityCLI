@@ -11,7 +11,7 @@ public class githubUserActivityApp {
 
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.out.println("Usage: java GithubUserActivityApp <username>");
+            System.out.println("Usage: java githubUserActivityApp <username>");
             return;
         }
 
@@ -100,7 +100,6 @@ public class githubUserActivityApp {
         return "";
     }
 
-    // Função auxiliar para capitalizar a primeira letra de uma string
     private static String capitalize(String str) {
         if (str == null || str.isEmpty()) {
             return str;
