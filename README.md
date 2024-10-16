@@ -21,4 +21,4 @@ And run it:
 ```bash
 java githubUserActivityApp <username>
 ```
-Enter the <username> whose public activity you want to view.
+Enter the username whose public activity you want to view.
